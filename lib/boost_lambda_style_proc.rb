@@ -1,4 +1,4 @@
-module BoostStyleLambda
+module BoostLambdaStyleProc
   class Base
     def method_missing name, *args
       Expression.new(self, name, args)
@@ -37,7 +37,7 @@ end
 module Kernel
   (1..9).each do |n|
     define_method :"_#{n}" do
-      BoostStyleLambda::Argument.new(n)
+      BoostLambdaStyleProc::Argument.new(n)
     end
   end
 end
