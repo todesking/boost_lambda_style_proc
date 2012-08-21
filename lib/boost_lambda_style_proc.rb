@@ -3,6 +3,9 @@ module BoostLambdaStyleProc
     def method_missing name, *args
       Expression.new(self, name, args)
     end
+    def ==(other)
+      method_missing :==, other
+    end
   end
   class Argument < Base
     def initialize(n)

@@ -23,5 +23,9 @@ describe BoostLambdaStyleProc do
       [2, 4, 6].should     be_all(&(_1.even?))
       [1, 4, 6].should_not be_all(&(_1.even?))
     end
+
+    it 'can create proc if expression contains == operators too' do
+      (_1 == _2).to_proc[1, 1].should == true
+    end
   end
 end
